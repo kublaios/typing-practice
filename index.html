@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+	<title>Typing practice</title>
+</head>
+<body>
+    <div id="display-text"></div>
+    <hr />
+    <textarea id="input-text" rows="5" cols="100"></textarea>
+    <br />
+    <button hx-get="https://litipsum.com/api/1" hx-target="#display-text">Use random quote</button>
+    &nbsp;
+    <button id="use-text">Use my own text</button>
+    <hr />
+    <h5>How to use</h5>
+    <ul>
+        <li>Hit 'Use random quote', or</li>
+        <li>Enter your own text above and hit 'Use my own text'</li>
+        <li>Start typing, and the displayed text will turn green/red based on the correctness of your input</li>
+    </ul>
+    <h5>Known limitations</h5>
+    <ul>
+        <li>Lit Ipsum API for the random quotes does not allow repeated requests within a short timeframe. If you need a new quote, you have to wait for ~5 seconds</li>
+        <li>Although there is a sanitization logic for some special characters like double quotes, you might still encounter other characters which you can't replicate in your keyboard. You'll have to copy-paste them or request a new text. The best is to report them <a href="https://github.com/kublaios/typing-practice">here</a> (or create a pull request) so we can include them during sanitization.</li>
+        <li>New lines are also a bit bumpy. The current comparison isn't smart enough to match them, so keep that in mind and avoid them whenever you can.</li>
+        <li>Sorry that the app does not congratulate you in any way, or give you your typing speed. Maybe one day...</li>
+    </ul>
+    <h5>Credits</h5>
+    <ul>
+        <li>Random quotes are provided by <a href="https://litipsum.com/">Lit Ipsum</a></li>
+        <li><a href="https://htmx.org/">HTMX</a> is used for the AJAX requests</li>
+    <li>Source code is available at <a href="https://github.com/kublaios/typing-practice">GitHub</a></li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+<script src="index.js"></script>
+</html>

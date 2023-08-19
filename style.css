@@ -1,0 +1,31 @@
+.correct {
+  color: green;
+}
+.correct:last-child,
+.incorrect:last-child {
+  border-right: .15rem solid black;
+}
+.incorrect {
+  color: red;
+}
+.bold {
+  font-weight: bold;
+}
+#display-text {
+  padding: 16px;
+}
+body, textarea {
+  font-family: Arial;
+  line-height: 1.4;
+  font-size: 16px;
+}
+textarea {
+  padding: 12px
+}
+li {
+    font-size: 13px;
+    color: gray;
+}
+h5 {
+    margin-bottom: 0;
+}
