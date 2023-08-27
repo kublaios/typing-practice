@@ -22,7 +22,7 @@ document.querySelector('#input-text').addEventListener('input', function() {
     // Do not process input if the input text will be longer than the displayed text
     let inputText = this.value;
     if (window.displayText.length < inputText.length) { return ;}
-  
+
     let result = '';
     let errorFound = false;
 
@@ -30,12 +30,14 @@ document.querySelector('#input-text').addEventListener('input', function() {
     for (let i = 0; i < inputText.length; i++){
         if (inputText[i] !== window.displayText[i] && !errorFound){
             errorFound = true;
-        } 
+        }
 
         if (errorFound) {
             result += '<span class="incorrect bold">' + window.displayText[i] + '</span>';
+            document.querySelector('#input-text').classList.add('incorrect');
         } else {
             result += '<span class="correct bold">' + window.displayText[i] + '</span>';
+            document.querySelector('#input-text').classList.remove('incorrect');
         }
     }
     document.querySelector('#display-text').innerHTML = result + window.displayText.substr(inputText.length);
